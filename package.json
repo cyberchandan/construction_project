@@ -1,0 +1,32 @@
+{
+  "name": "buildconnect-ncr",
+  "version": "1.0.0",
+  "description": "Production-minded construction lead-generation platform for Noida & Greater Noida",
+  "main": "server/server.js",
+  "scripts": {
+    "dev": "concurrently \"npm --prefix server run dev\" \"npm --prefix client run dev\"",
+    "install:all": "npm install && npm --prefix server install && npm --prefix client install",
+    "dev:server": "npm --prefix server run dev",
+    "dev:client": "npm --prefix client run dev",
+    "start:server": "npm --prefix server start",
+    "build:client": "npm --prefix client run build",
+    "setup:admin": "npm --prefix server run setup:admin",
+    "seed": "npm --prefix server run seed",
+    "test": "npm --prefix server test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "construction",
+    "lead-generation",
+    "noida",
+    "greater-noida",
+    "mern",
+    "react",
+    "express",
+    "mongodb"
+  ],
+  "author": "BuildConnect NCR Team",
+  "license": "ISC"
+}

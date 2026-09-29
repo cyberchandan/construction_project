@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: #384959;
+    --color-accent: #88BDF2;
+  }
+
+  body {
+    background-color: #F0F6FC;
+    color: #384959;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .bg-glass {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .bg-glass-dark {
+    background: rgba(56, 73, 89, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .text-sky-gradient {
+    background: linear-gradient(135deg, #BDDDFC 0%, #88BDF2 50%, #6A89A7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-sky-gradient {
+    background: linear-gradient(135deg, #88BDF2 0%, #6A89A7 100%);
+  }
+}
+
+/* Print Styles for Formal Quotation Printing */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-quote-area, #printable-quote-area * {
+    visibility: visible;
+  }
+  #printable-quote-area {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F0F6FC;
+}
+::-webkit-scrollbar-thumb {
+  background: #384959;
+  border-radius: 4px;
+}
