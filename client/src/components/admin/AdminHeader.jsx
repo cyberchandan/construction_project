@@ -16,7 +16,7 @@ export const AdminHeader = ({ title, onMenuToggle }) => {
         >
           <Menu className="w-6 h-6" />
         </button>
-        <h1 className="text-xl sm:text-2xl font-bold font-display text-forest-900 leading-tight">
+        <h1 className="text-1xl sm:text-2xl font-bold font-display text-[#384959] leading-tight">
           {title}
         </h1>
       </div>
@@ -25,16 +25,16 @@ export const AdminHeader = ({ title, onMenuToggle }) => {
         <Link
           to="/"
           target="_blank"
-          className="hidden sm:flex items-center space-x-1 text-xs font-semibold text-forest-700 bg-forest-50 border border-forest-200 hover:bg-forest-100 py-1.5 px-3 rounded-lg transition"
+          className="hidden sm:flex items-center space-x-1 text-xs font-semibold text-[#384959] bg-[#BDDDFC]/30 border border-[#88BDF2]/40 hover:bg-[#BDDDFC]/60 py-1.5 px-3 rounded-lg transition"
         >
           <span>View Public Website</span>
-          <ExternalLink className="w-3.5 h-3.5" />
+          <ExternalLink className="w-3.5 h-3.5 text-[#384959]" />
         </Link>
 
         <div className="flex items-center space-x-2 border-l border-slate-200 pl-4">
           <ShieldCheck className="w-4 h-4 text-emerald-600" />
           <span className="text-xs font-bold text-slate-700">{user?.name}</span>
-          <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-sage-100 text-forest-800">
+          <span className="text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
             {user?.role}
           </span>
         </div>

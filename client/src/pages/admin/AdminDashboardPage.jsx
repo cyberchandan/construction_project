@@ -99,7 +99,7 @@ export const AdminDashboardPage = () => {
               <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
                 {/* Line Chart: Enquiry Trends */}
                 <div className="lg:col-span-8 bg-white p-6 rounded-2xl border border-slate-200 shadow-md space-y-4">
-                  <h3 className="text-base font-bold font-display text-forest-900">
+                  <h3 className="text-base font-bold font-display text-[#384959]">
                     Lead Enquiry Trends over Time
                   </h3>
                   <div className="h-72 w-full">
@@ -109,7 +109,7 @@ export const AdminDashboardPage = () => {
                         <XAxis dataKey="date" stroke="#64748B" fontSize={11} />
                         <YAxis stroke="#64748B" fontSize={11} allowDecimals={false} />
                         <Tooltip />
-                        <Line type="monotone" dataKey="enquiries" stroke="#172C25" strokeWidth={3} dot={{ fill: '#B8D9B4', r: 5 }} />
+                        <Line type="monotone" dataKey="enquiries" stroke="#384959" strokeWidth={3} dot={{ fill: '#88BDF2', r: 5 }} />
                       </LineChart>
                     </ResponsiveContainer>
                   </div>
@@ -117,7 +117,7 @@ export const AdminDashboardPage = () => {
 
                 {/* Pie Chart: Status Distribution */}
                 <div className="lg:col-span-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-md space-y-4">
-                  <h3 className="text-base font-bold font-display text-forest-900">
+                  <h3 className="text-base font-bold font-display text-[#384959]">
                     Lead Status Distribution
                   </h3>
                   <div className="h-72 w-full">
@@ -133,7 +133,7 @@ export const AdminDashboardPage = () => {
                           dataKey="value"
                         >
                           {(charts.statusDistribution || []).map((entry, index) => (
-                            <Cell key={`cell-${index}`} fill={entry.color || '#172C25'} />
+                            <Cell key={`cell-${index}`} fill={entry.color || '#384959'} />
                           ))}
                         </Pie>
                         <Tooltip />
@@ -146,7 +146,7 @@ export const AdminDashboardPage = () => {
 
               {/* Bar Chart: Source Breakdown */}
               <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-md space-y-4">
-                <h3 className="text-base font-bold font-display text-forest-900">
+                <h3 className="text-base font-bold font-display text-[#384959]">
                   Lead Acquisition Source Performance
                 </h3>
                 <div className="h-64 w-full">
@@ -156,7 +156,7 @@ export const AdminDashboardPage = () => {
                       <XAxis dataKey="source" stroke="#64748B" fontSize={11} />
                       <YAxis stroke="#64748B" fontSize={11} allowDecimals={false} />
                       <Tooltip />
-                      <Bar dataKey="count" fill="#172C25" radius={[6, 6, 0, 0]} />
+                      <Bar dataKey="count" fill="#384959" radius={[6, 6, 0, 0]} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>

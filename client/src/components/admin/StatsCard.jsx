@@ -7,13 +7,13 @@ export const StatsCard = ({ title, value, subtitle, icon: Icon, color = 'forest'
         <span className="text-xs font-bold text-slate-500 uppercase tracking-wider block mb-1">
           {title}
         </span>
-        <span className="text-2xl sm:text-3xl font-extrabold font-display text-forest-900 block tracking-tight">
+        <span className="text-2xl sm:text-3xl font-extrabold font-display text-[#384959] block tracking-tight">
           {value}
         </span>
-        {subtitle && <span className="text-xs font-semibold text-slate-400 mt-1 block">{subtitle}</span>}
+        {subtitle && <span className="text-xs font-semibold text-slate-500 mt-1 block">{subtitle}</span>}
       </div>
       {Icon && (
-        <div className="w-12 h-12 rounded-2xl bg-forest-700 text-sage-300 flex items-center justify-center shadow-md">
+        <div className="w-12 h-12 rounded-2xl bg-[#384959] text-[#88BDF2] flex items-center justify-center shadow-md">
           <Icon className="w-6 h-6" />
         </div>
       )}

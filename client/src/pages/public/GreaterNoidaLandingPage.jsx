@@ -14,18 +14,18 @@ export const GreaterNoidaLandingPage = () => {
 
       <div className="py-12 lg:py-20 space-y-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Local Landing Banner */}
-        <div className="bg-forest-900 text-white rounded-3xl p-8 lg:p-12 shadow-2xl relative overflow-hidden border border-forest-700">
+        <div className="bg-gradient-to-br from-[#384959] via-[#283542] to-[#384959] text-white rounded-3xl p-8 lg:p-12 shadow-2xl relative overflow-hidden border border-[#88BDF2]/40">
           <div className="max-w-3xl space-y-4 relative z-10">
-            <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold bg-sage-300 text-forest-950">
-              <MapPin className="w-3.5 h-3.5" />
+            <span className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full text-xs font-bold bg-[#BDDDFC] text-[#384959]">
+              <MapPin className="w-3.5 h-3.5 text-[#384959]" />
               <span>Greater Noida & Noida Extension</span>
             </span>
 
-            <h1 className="text-3xl sm:text-5xl font-extrabold font-display leading-tight">
+            <h1 className="text-3xl sm:text-5xl font-extrabold font-display leading-tight text-white">
               House Construction in Greater Noida
             </h1>
 
-            <p className="text-base text-slate-300 leading-relaxed">
+            <p className="text-base text-slate-200 leading-relaxed">
               Serving Greater Noida West (Noida Extension), Alpha, Beta, Gamma, Omega, Zeta, and Yamuna Expressway plots. Complete turnkey material + labour and labour-only structure contracts.
             </p>
           </div>
@@ -34,7 +34,7 @@ export const GreaterNoidaLandingPage = () => {
         {/* Localized Info */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <div className="space-y-4">
-            <h2 className="text-2xl font-bold font-display text-forest-900">
+            <h2 className="text-2xl font-bold font-display text-[#384959]">
               Greater Noida Construction Excellence
             </h2>
             <p className="text-sm text-slate-600 leading-relaxed">
@@ -49,7 +49,7 @@ export const GreaterNoidaLandingPage = () => {
                 'Stage-wise payment milestones linked to progress',
               ].map((item, idx) => (
                 <li key={idx} className="flex items-center space-x-2 text-slate-700 font-semibold">
-                  <CheckCircle2 className="w-4 h-4 text-forest-700 flex-shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-[#6A89A7] flex-shrink-0" />
                   <span>{item}</span>
                 </li>
               ))}
