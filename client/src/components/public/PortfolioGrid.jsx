@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { MapPin, Maximize2, Building, CheckCircle2 } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { MapPin, Maximize2, MessageSquare, ArrowRight } from 'lucide-react';
+import { useSettings } from '../../context/SettingsContext';
+import { getWhatsAppLink } from '../../utils/whatsapp';
 
 const sampleProjects = [
   {
@@ -38,6 +41,8 @@ export const PortfolioGrid = () => {
   const [projects, setProjects] = useState(sampleProjects);
   const [filter, setFilter] = useState('all');
   const [selectedProject, setSelectedProject] = useState(null);
+  const { settings } = useSettings();
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('/api/v1/projects')
@@ -49,6 +54,20 @@ export const PortfolioGrid = () => {
       })
       .catch(() => {});
   }, []);
+
+  const handleRequestQuote = (project) => {
+    setSelectedProject(null);
+    navigate('/contact', {
+      state: {
+        initialValues: {
+          location: project.location,
+          serviceType: project.serviceType,
+          areaSqFt: project.areaSqFt,
+          message: `I am interested in getting a construction quotation for a project similar to "${project.title}" (${project.location}, ${project.areaSqFt} sq ft).`,
+        },
+      },
+    });
+  };
 
   const filteredProjects = projects.filter((p) => {
     if (filter === 'all') return true;
@@ -133,7 +152,7 @@ export const PortfolioGrid = () => {
       {selectedProject && (
         <div className="fixed inset-0 z-50 bg-[#1C2530]/80 backdrop-blur-sm flex items-center justify-center p-4">
           <div className="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl border border-slate-200 max-h-[90vh] overflow-y-auto text-[#384959]">
-            <div className="relative h-64">
+            <div className="relative h-64 sm:h-72">
               <img
                 src={selectedProject.featuredImage || selectedProject.images?.[0]}
                 alt={selectedProject.title}
@@ -141,7 +160,7 @@ export const PortfolioGrid = () => {
               />
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#384959]/80 text-white flex items-center justify-center hover:bg-[#384959]"
+                className="absolute top-4 right-4 w-9 h-9 rounded-full bg-[#384959]/80 text-white flex items-center justify-center hover:bg-[#384959] transition"
               >
                 ✕
               </button>
@@ -167,16 +186,27 @@ export const PortfolioGrid = () => {
                 {selectedProject.description}
               </p>
 
-              <div className="pt-2 flex justify-end">
-                <button
-                  onClick={() => {
-                    setSelectedProject(null);
-                    const el = document.getElementById('quote-form');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="px-5 py-2.5 bg-[#384959] text-[#88BDF2] text-xs font-extrabold rounded-xl shadow hover:bg-[#283542] transition"
+              {/* Action Buttons */}
+              <div className="pt-3 border-t border-slate-200 flex flex-col sm:flex-row items-stretch sm:items-center justify-end gap-3">
+                <a
+                  href={getWhatsAppLink(
+                    settings.whatsapp || settings.phone,
+                    `Hello ${settings.businessName}! I am interested in your project '${selectedProject.title}' (${selectedProject.location}, ${selectedProject.areaSqFt} sq ft). Please provide a quotation for a similar build.`
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold rounded-xl shadow flex items-center justify-center space-x-1.5 transition"
                 >
-                  Request Similar Project Quote
+                  <MessageSquare className="w-4 h-4" />
+                  <span>WhatsApp Inquiry</span>
+                </a>
+
+                <button
+                  onClick={() => handleRequestQuote(selectedProject)}
+                  className="px-5 py-2.5 bg-[#88BDF2] hover:bg-[#6A89A7] text-[#384959] hover:text-white text-xs font-black rounded-xl shadow transition flex items-center justify-center space-x-1.5"
+                >
+                  <span>Request Similar Project Quote</span>
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>

@@ -28,7 +28,7 @@ export const AboutPage = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
-            <div className="w-12 h-12 rounded-xl bg-forest-700 text-sage-300 flex items-center justify-center">
+            <div className="w-12 h-12 rounded-xl bg-[#384959] text-[#88BDF2] flex items-center justify-center">
               <ShieldCheck className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold font-display text-forest-900">Structural Quality</h3>
@@ -38,7 +38,7 @@ export const AboutPage = () => {
           </div>
 
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
-            <div className="w-12 h-12 rounded-xl bg-forest-700 text-sage-300 flex items-center justify-center">
+            <div className="w-12 h-12 rounded-xl bg-[#384959] text-[#88BDF2] flex items-center justify-center">
               <HardHat className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold font-display text-forest-900">Skilled Workforce</h3>
@@ -48,7 +48,7 @@ export const AboutPage = () => {
           </div>
 
           <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-md space-y-3">
-            <div className="w-12 h-12 rounded-xl bg-forest-700 text-sage-300 flex items-center justify-center">
+            <div className="w-12 h-12 rounded-xl bg-[#384959] text-[#88BDF2] flex items-center justify-center">
               <Award className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold font-display text-forest-900">Transparent Pricing</h3>

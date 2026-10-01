@@ -88,7 +88,7 @@ export const AdminLoginPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full py-3.5 bg-forest-700 hover:bg-forest-800 text-white font-bold text-sm rounded-xl shadow-lg transition transform hover:-translate-y-0.5 disabled:opacity-60"
+              className="w-full py-3.5 bg-[#88BDF2] hover:bg-[#6A89A7] text-[#384959] hover:text-white font-bold text-sm rounded-xl shadow-lg transition transform hover:-translate-y-0.5 disabled:opacity-60"
             >
               {loading ? 'Authenticating...' : 'Sign In to Portal'}
             </button>

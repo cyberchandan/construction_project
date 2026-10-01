@@ -28,7 +28,7 @@ export const ProjectDetailPage = () => {
       <div className="py-20 text-center max-w-md mx-auto space-y-4">
         <h2 className="text-2xl font-bold text-slate-800">Project Not Found</h2>
         <p className="text-sm text-slate-500">The requested portfolio project could not be found.</p>
-        <Link to="/projects" className="inline-block px-5 py-2.5 bg-forest-700 text-white rounded-xl text-xs font-bold">
+        <Link to="/projects" className="inline-block px-5 py-2.5 bg-[#88BDF2] hover:bg-[#6A89A7] text-[#384959] hover:text-white rounded-xl text-xs font-bold transition">
           Back to Projects Gallery
         </Link>
       </div>

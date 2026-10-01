@@ -192,7 +192,7 @@ export const AdminSettingsPage = () => {
               <button
                 type="submit"
                 disabled={saving}
-                className="px-6 py-3 bg-forest-700 hover:bg-forest-800 text-white font-bold text-xs rounded-xl shadow-lg flex items-center space-x-2"
+                className="px-6 py-3 bg-[#88BDF2] hover:bg-[#6A89A7] text-[#384959] hover:text-white font-bold text-xs rounded-xl shadow-lg flex items-center space-x-2 transition"
               >
                 <Save className="w-4 h-4 text-sage-300" />
                 <span>{saving ? 'Saving Settings...' : 'Save Settings Live'}</span>

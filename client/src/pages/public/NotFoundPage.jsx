@@ -10,7 +10,7 @@ export const NotFoundPage = () => {
 
       <div className="min-h-[70vh] flex items-center justify-center px-4 py-16">
         <div className="bg-white rounded-3xl p-8 sm:p-12 border border-slate-200 shadow-xl max-w-md w-full text-center space-y-5">
-          <div className="w-16 h-16 rounded-2xl bg-forest-700 text-sage-300 flex items-center justify-center mx-auto shadow-md">
+          <div className="w-16 h-16 rounded-2xl bg-[#384959] text-[#88BDF2] flex items-center justify-center mx-auto shadow-md">
             <HardHat className="w-9 h-9" />
           </div>
 
@@ -22,7 +22,7 @@ export const NotFoundPage = () => {
 
           <Link
             to="/"
-            className="inline-flex items-center justify-center space-x-2 w-full py-3.5 bg-forest-700 hover:bg-forest-800 text-white font-bold text-sm rounded-xl shadow transition"
+            className="inline-flex items-center justify-center space-x-2 w-full py-3.5 bg-[#88BDF2] hover:bg-[#6A89A7] text-[#384959] hover:text-white font-bold text-sm rounded-xl shadow transition"
           >
             <Home className="w-4 h-4 text-sage-300" />
             <span>Return to Home Page</span>

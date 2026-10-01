@@ -49,6 +49,9 @@ app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 app.use(cookieParser());
 
+// Serve static uploaded project files
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 // Health & Base API Info Endpoints
 app.get(['/', '/api/v1'], (req, res) => {
   res.status(200).json({
@@ -83,6 +86,7 @@ const quoteRoutes = require('./routes/quoteRoutes');
 const settingsRoutes = require('./routes/settingsRoutes');
 const dashboardRoutes = require('./routes/dashboardRoutes');
 const seoRoutes = require('./routes/seoRoutes');
+const uploadRoutes = require('./routes/uploadRoutes');
 
 // SEO XML/Txt Routes at root
 app.use('/', seoRoutes);
@@ -94,6 +98,7 @@ app.use('/api/v1/projects', projectRoutes);
 app.use('/api/v1/quotes', quoteRoutes);
 app.use('/api/v1/settings', settingsRoutes);
 app.use('/api/v1/dashboard', dashboardRoutes);
+app.use('/api/v1/upload', uploadRoutes);
 
 // Centralized Error Handling Middleware
 app.use(errorHandler);

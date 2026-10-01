@@ -79,7 +79,7 @@ export const LeadTable = ({ leads, onSelectLead }) => {
 
                   <button
                     onClick={() => onSelectLead(lead._id)}
-                    className="inline-flex items-center justify-center px-3 py-1.5 rounded-lg bg-forest-700 hover:bg-forest-800 text-white font-bold text-xs shadow transition"
+                    className="inline-flex items-center justify-center px-3 py-1.5 rounded-lg bg-[#88BDF2] hover:bg-[#6A89A7] text-[#384959] hover:text-white font-bold text-xs shadow transition"
                   >
                     <Eye className="w-3.5 h-3.5 mr-1" />
                     <span>Manage</span>

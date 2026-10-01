@@ -1,6 +1,7 @@
 import React from 'react';
 import { SEO } from '../../components/common/SEO';
 import { Hero } from '../../components/public/Hero';
+import { ExperienceLegacySection } from '../../components/public/ExperienceLegacySection';
 import { ServiceCard } from '../../components/public/ServiceCard';
 import { CostCalculator } from '../../components/public/CostCalculator';
 import { PortfolioGrid } from '../../components/public/PortfolioGrid';
@@ -32,6 +33,11 @@ export const HomePage = () => {
       <div className="space-y-16 lg:space-y-24 pb-16">
         {/* Hero Banner Section */}
         <Hero />
+
+        {/* 25+ Years Legacy & Excellence Presentation */}
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <ExperienceLegacySection />
+        </section>
 
         {/* Core Services Section */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

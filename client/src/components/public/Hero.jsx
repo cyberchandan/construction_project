@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShieldCheck, CheckCircle2, MessageSquare, ArrowRight, Building2 } from 'lucide-react';
+import { ShieldCheck, CheckCircle2, MessageSquare, ArrowRight, Building2, Award } from 'lucide-react';
 import { useSettings } from '../../context/SettingsContext';
 import { getWhatsAppLink } from '../../utils/whatsapp';
 
@@ -20,9 +20,15 @@ export const Hero = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           {/* Left Hero Content */}
           <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-[#283542] border border-[#88BDF2]/50 px-4 py-1.5 rounded-full text-xs font-black text-[#BDDDFC] shadow-md">
-              <ShieldCheck className="w-4 h-4 text-[#88BDF2]" />
-              <span>Verified Local Builder • Noida & Greater Noida</span>
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center space-x-2 bg-[#283542] border border-[#88BDF2]/50 px-4 py-1.5 rounded-full text-xs font-black text-[#BDDDFC] shadow-md">
+                <ShieldCheck className="w-4 h-4 text-[#88BDF2]" />
+                <span>Verified Local Builder • Noida & Greater Noida</span>
+              </div>
+              <div className="inline-flex items-center space-x-1.5 bg-gradient-to-r from-amber-500/20 to-amber-600/20 border border-amber-400/50 px-3.5 py-1.5 rounded-full text-xs font-black text-amber-300 shadow-md">
+                <Award className="w-4 h-4 text-amber-400" />
+                <span>25+ Years Legacy</span>
+              </div>
             </div>
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-display leading-tight tracking-tight text-white">
@@ -30,7 +36,7 @@ export const Hero = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-[#BDDDFC] max-w-2xl leading-relaxed font-bold">
-              Premier house construction company in Noida & Greater Noida. Offering complete turnkey contracts (material + labour) and dedicated labour-only construction with 100% transparent pricing and structural guarantees.
+              Premier house construction Service in Noida & Greater Noida. Offering complete turnkey contracts (material + labour) and dedicated labour-only construction with 100% transparent pricing and structural guarantees.
             </p>
 
             {/* Core Trust Badges */}

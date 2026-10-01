@@ -1,4 +1,5 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 import { SEO } from '../../components/common/SEO';
 import { LeadFormSection } from '../../components/public/LeadFormSection';
 import { Phone, Mail, MapPin, MessageSquare } from 'lucide-react';
@@ -7,6 +8,8 @@ import { getWhatsAppLink } from '../../utils/whatsapp';
 
 export const ContactPage = () => {
   const { settings } = useSettings();
+  const location = useLocation();
+  const initialValues = location.state?.initialValues || {};
 
   const waUrl = getWhatsAppLink(
     settings.whatsapp || settings.phone,
@@ -85,7 +88,7 @@ export const ContactPage = () => {
 
           {/* Form Column */}
           <div className="lg:col-span-7">
-            <LeadFormSection source="contact_page" />
+            <LeadFormSection source="contact_page" initialValues={initialValues} />
           </div>
         </div>
       </div>

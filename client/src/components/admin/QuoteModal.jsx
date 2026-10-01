@@ -143,7 +143,7 @@ export const QuoteModal = ({ isOpen, onClose, lead, onQuoteCreated }) => {
           <button
             type="submit"
             disabled={saving}
-            className="px-5 py-2 bg-forest-700 text-white rounded-xl text-xs font-bold hover:bg-forest-800 shadow"
+            className="px-5 py-2 bg-[#88BDF2] hover:bg-[#6A89A7] text-[#384959] hover:text-white rounded-xl text-xs font-bold shadow transition"
           >
             {saving ? 'Creating Quotation...' : 'Create Quotation Document'}
           </button>

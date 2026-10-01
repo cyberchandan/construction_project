@@ -102,7 +102,7 @@ export const AdminQuotesPage = () => {
                       <td className="py-3.5 px-4 text-right">
                         <button
                           onClick={() => handlePrintLaunch(q)}
-                          className="px-3 py-1.5 bg-forest-700 hover:bg-forest-800 text-white text-xs font-bold rounded-lg shadow inline-flex items-center space-x-1"
+                          className="px-3 py-1.5 bg-[#88BDF2] hover:bg-[#6A89A7] text-[#384959] hover:text-white text-xs font-bold rounded-lg shadow inline-flex items-center space-x-1 transition"
                         >
                           <Printer className="w-3.5 h-3.5" />
                           <span>Print / Export</span>

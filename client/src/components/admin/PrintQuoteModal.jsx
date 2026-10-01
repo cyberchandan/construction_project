@@ -23,7 +23,7 @@ export const PrintQuoteModal = ({ isOpen, onClose, quote }) => {
           <span className="text-xs font-bold text-slate-700">Printable Client Proposal Document</span>
           <button
             onClick={handlePrint}
-            className="px-4 py-2 bg-forest-700 hover:bg-forest-800 text-white font-bold text-xs rounded-xl shadow flex items-center space-x-2"
+            className="px-4 py-2 bg-[#88BDF2] hover:bg-[#6A89A7] text-[#384959] hover:text-white font-bold text-xs rounded-xl shadow flex items-center space-x-2 transition"
           >
             <Printer className="w-4 h-4" />
             <span>Print / Export PDF</span>

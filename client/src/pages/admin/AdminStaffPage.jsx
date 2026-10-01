@@ -120,7 +120,7 @@ export const AdminStaffPage = () => {
                 <button
                   type="submit"
                   disabled={loading}
-                  className="px-6 py-3 bg-forest-700 hover:bg-forest-800 text-white font-bold text-xs rounded-xl shadow-lg"
+                  className="px-6 py-3 bg-[#88BDF2] hover:bg-[#6A89A7] text-[#384959] hover:text-white font-bold text-xs rounded-xl shadow-lg transition"
                 >
                   {loading ? 'Creating Account...' : 'Create Staff Account'}
                 </button>

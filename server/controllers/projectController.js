@@ -1,4 +1,5 @@
 const Project = require('../models/Project');
+const { deleteFileFromUploads } = require('../routes/uploadRoutes');
 
 let memoryProjects = [
   {
@@ -177,6 +178,27 @@ const createProject = async (req, res, next) => {
 const updateProject = async (req, res, next) => {
   try {
     const { id } = req.params;
+    if (req.body.images && Array.isArray(req.body.images) && req.body.images.length > 0) {
+      req.body.featuredImage = req.body.images[0];
+    }
+
+    // Clean up unlinked / removed photo files from server storage
+    let existingProject = null;
+    try {
+      existingProject = await Project.findById(id);
+    } catch (e) {
+      existingProject = memoryProjects.find((p) => String(p._id) === String(id));
+    }
+
+    if (existingProject && req.body.images && Array.isArray(req.body.images)) {
+      const oldImages = Array.isArray(existingProject.images) ? existingProject.images : [];
+      const newImages = req.body.images;
+      oldImages.forEach((oldUrl) => {
+        if (!newImages.includes(oldUrl)) {
+          deleteFileFromUploads(oldUrl);
+        }
+      });
+    }
 
     try {
       const updated = await Project.findByIdAndUpdate(id, req.body, { new: true, runValidators: true });
@@ -199,14 +221,38 @@ const updateProject = async (req, res, next) => {
 const deleteProject = async (req, res, next) => {
   try {
     const { id } = req.params;
+
+    // Delete associated upload files from disk
+    let targetProject = null;
+    try {
+      targetProject = await Project.findById(id);
+    } catch (e) {
+      targetProject = memoryProjects.find((p) => String(p._id) === String(id));
+    }
+
+    if (targetProject) {
+      const imagesToDelete = [];
+      if (Array.isArray(targetProject.images)) {
+        imagesToDelete.push(...targetProject.images);
+      }
+      if (targetProject.featuredImage) {
+        imagesToDelete.push(targetProject.featuredImage);
+      }
+
+      imagesToDelete.forEach((imgUrl) => {
+        deleteFileFromUploads(imgUrl);
+      });
+    }
+
     try {
       await Project.findByIdAndDelete(id);
     } catch (dbErr) {
       memoryProjects = memoryProjects.filter((p) => String(p._id) !== String(id));
     }
+
     res.status(200).json({
       success: true,
-      message: 'Project deleted successfully',
+      message: 'Project deleted successfully and associated photos removed from disk',
     });
   } catch (error) {
     next(error);

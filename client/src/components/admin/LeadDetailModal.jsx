@@ -225,7 +225,7 @@ export const LeadDetailModal = ({ leadId, isOpen, onClose, onRefresh, onCreateQu
               <button
                 type="submit"
                 disabled={saving}
-                className="px-5 py-2.5 bg-forest-700 hover:bg-forest-800 text-white font-bold text-xs rounded-xl shadow transition"
+                className="px-5 py-2.5 bg-[#88BDF2] hover:bg-[#6A89A7] text-[#384959] hover:text-white font-bold text-xs rounded-xl shadow transition"
               >
                 {saving ? 'Saving Updates...' : 'Save Lead Updates'}
               </button>
