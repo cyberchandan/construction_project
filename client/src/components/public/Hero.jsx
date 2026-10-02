@@ -12,14 +12,14 @@ export const Hero = () => {
   );
 
   return (
-    <section className="relative bg-[#384959] text-white pt-12 pb-20 lg:pt-20 lg:pb-28 overflow-hidden border-b border-[#6A89A7]/30">
+    <section className="relative bg-[#384959] text-white pt-4 pb-8 lg:pt-6 lg:pb-12 overflow-hidden border-b border-[#6A89A7]/30">
       {/* Background Subtle Pattern */}
       <div className="absolute inset-0 opacity-15 bg-[radial-gradient(#88BDF2_1px,transparent_1px)] [background-size:24px_24px]" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           {/* Left Hero Content */}
-          <div className="lg:col-span-7 space-y-6">
+          <div className="lg:col-span-7 space-y-4">
             <div className="flex flex-wrap items-center gap-2">
               <div className="inline-flex items-center space-x-2 bg-[#283542] border border-[#88BDF2]/50 px-4 py-1.5 rounded-full text-xs font-black text-[#BDDDFC] shadow-md">
                 <ShieldCheck className="w-4 h-4 text-[#88BDF2]" />
@@ -31,11 +31,11 @@ export const Hero = () => {
               </div>
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black font-display leading-tight tracking-tight text-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black font-display leading-tight tracking-tight text-white">
               Build Your Dream Home with <span className="text-[#88BDF2]">Confidence.</span>
             </h1>
 
-            <p className="text-base sm:text-lg text-[#BDDDFC] max-w-2xl leading-relaxed font-bold">
+            <p className="text-sm sm:text-base text-[#BDDDFC] max-w-2xl leading-relaxed font-bold">
               Premier house construction Service in Noida & Greater Noida. Offering complete turnkey contracts (material + labour) and dedicated labour-only construction with 100% transparent pricing and structural guarantees.
             </p>
 
